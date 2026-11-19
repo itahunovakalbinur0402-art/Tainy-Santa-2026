@@ -207,7 +207,7 @@ app.get("/api/admin/event", organizerOnly, async (req, res) => {
     event,
     participants: p.rows,
     pairs,
-    inviteUrl: ${process.env.BASE_URL || ""}/join/${event.id}
+    inviteUrl: (process.env.BASE_URL || "") + "/join/" + event.id
   });
 });
 
