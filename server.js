@@ -389,9 +389,9 @@ app.post("/api/admin/draw", organizerOnly, async (req, res) => {
   res.json({ ok: true });
 });
 
-app.get("/join/:eventId", (, res) => res.sendFile(path.join(_dirname, "public", "index.html")));
-app.get("/p/:token", (, res) => res.sendFile(path.join(_dirname, "public", "index.html")));
-app.get("*", (, res) => res.sendFile(path.join(_dirname, "public", "index.html")));
+app.get("/join/:eventId", (req, res) => res.sendFile(path.join(__dirname, "public", "index.html")));
+app.get("/p/:token", (req, res) => res.sendFile(path.join(__dirname, "public", "index.html")));
+app.get("*", (req, res) => res.sendFile(path.join(__dirname, "public", "index.html")));
 
 if (!process.env.VERCEL) {
   const port = process.env.PORT || 3000;
