@@ -219,7 +219,7 @@ app.patch("/api/admin/event", organizerOnly, async (req, res) => {
   const min = Number(req.body.budgetMin);
   const max = Number(req.body.budgetMax);
   const date = cleanText(req.body.exchangeDate, 10);
-  const parsedDate = /^\d{4}-\d{2}-\d{2}$/.test(date) ? new Date(${date}T00:00:00Z) : null;
+  const parsedDate = /^\d{4}-\d{2}-\d{2}$/.test(date) ? new Date(date + "T00:00:00Z") : null;
   const validDate = parsedDate && !Number.isNaN(parsedDate.getTime()) && parsedDate.toISOString().slice(0, 10) === date;
 
   if (!Number.isInteger(min) || !Number.isInteger(max) || min < 0 || max < min || !validDate) {
