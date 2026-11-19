@@ -267,7 +267,7 @@ app.post("/api/join/:eventId", async (req, res) => {
       "INSERT INTO participants(event_id, name, email, access_token) VALUES($1, $2, $3, $4)",
       [event.id, name, email, token]
     );
-    res.json({ ok: true, participantUrl: ${process.env.BASE_URL || ""}/p/${token} });
+    res.json({ ok: true, participantUrl: (process.env.BASE_URL || "") + "/p/" + token });
   } catch (e) {
     if (e.code === "23505") return res.status(409).json({ error: "Участник с таким именем уже записан." });
     throw e;
