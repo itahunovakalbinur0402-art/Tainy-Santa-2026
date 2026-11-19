@@ -386,7 +386,7 @@ app.post("/api/admin/draw", organizerOnly, async (req, res) => {
     client.release();
   }
 
-  res.json({ ok: true });
+app.get("*", (req, res) => res.sendFile(path.join(__dirname, "public", "index.html")));
 });
 
 app.get("/join/:eventId", (req, res) => res.sendFile(path.join(__dirname, "public", "index.html")));
