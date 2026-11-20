@@ -386,7 +386,7 @@ app.post("/api/admin/draw", organizerOnly, async (req, res) => {
     client.release();
   }
 
-app.get("*", (req, res) => res.sendFile(path.join(__dirname, "public", "index.html")));
+app.listen(port, () => console.log("Тайный Санта 2026 запущен на порту " + port));
 });
 
 app.get("/join/:eventId", (req, res) => res.sendFile(path.join(__dirname, "public", "index.html")));
