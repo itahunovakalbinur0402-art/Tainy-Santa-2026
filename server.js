@@ -395,7 +395,7 @@ app.get("*", (req, res) => res.sendFile(path.join(__dirname, "public", "index.ht
 
 if (!process.env.VERCEL) {
   const port = process.env.PORT || 3000;
-  app.listen(port, () => console.log(Тайный Санта 2026 запущен на порту ${port}));
+app.listen(port, () => console.log("Тайный Санта 2026 запущен на порту " + port));
 }
 
 module.exports = app;
